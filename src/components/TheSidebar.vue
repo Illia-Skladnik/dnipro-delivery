@@ -1,40 +1,53 @@
 <style scoped lang="scss">
-.sidebar {
-  background-color: pink;
-  height: 1000px;
-  width: 250px;
+  @import '@/assets/styles/variables.scss';
+  .sidebar {
+    background-color: $window-color;
+    height: min-content;
+    
+    display: flex;
+    flex-direction: column;
 
-  display: flex;
-  flex-direction: column;
+    button:last-of-type {
+      margin-bottom: 30px;
+    }
 
-  &__button {
-    height: 50px;
-    // border-radius: 0;
-    // border: 0;
-    // box-shadow: 0px 0px 4px 0px #0000002E;
+    &__button {
+      height: 50px;
+      width: 250px;
+      border: 1px solid $border-color;
 
-    cursor: pointer;
+      cursor: pointer;
 
-    &--first {
-      display: flex;
-      justify-content: space-between;
+      &--active {
+        background-color: $second-color;
+      }
+
+      &--first {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    &__button-text {
+      &--goods {
+        line-height: 50px;
+        margin-left: 15px;
+      }
+    }
+
+    &__more-sign {
+      margin: auto 22px auto 0
+    }
+
+    &__description-block {
+      margin-left: 20px;
+      margin-bottom: 30px;
+    }
+
+    &__description-title {
+      margin-bottom: 15px;
     }
   }
-
-  &__button-text {
-    &--goods {
-      // height: 50px;
-      // display: block;
-      line-height: 50px;
-      margin-left: 15px;
-      // margin: 0 40px 0 15px;
-    }
-  }
-
-  &__more-sign {
-    margin: auto 22px auto 0
-  }
-}
 </style>
 
 <template>
@@ -42,6 +55,7 @@
     <button
       @click="activateIsActiveMainPage"
       class="sidebar__button sidebar__button--show-goods sidebar__button--first"
+      :class="isActiveMainPage ? 'sidebar__button--active' : ''"
     >
       <span class="sidebar__button-text--goods">Що ми маємо</span>
       <svg class="sidebar__more-sign" width="10" height="19" viewBox="0 0 10 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -50,26 +64,26 @@
     </button >
 
     <button
+    :class="isActiveMainPage ? '' : 'sidebar__button--active'"
       @click="deactivateIsActiveMainPage"
       class="sidebar__button"
     >
       <span>Про нас</span>
     </button>
+
+    <div class="sidebar__description-block">
+      <h3 class="sidebar__description-title">Компанія</h3>
+      <span class="sidebar__description-text">ЧП Дніпро-Делівері</span>
+    </div>
+
+    <div class="sidebar__description-block">
+      <h3 class="sidebar__description-title">Адреса</h3>
+      <span class="sidebar__description-text">м. Дніпро</span>
+    </div>
   </div>
 </template>
 
 <script setup>
-  // import { isActiveMainPageStore } from "../../stores/isActiveMainPageStore";
-
-  // const { isActiveMainPage } = isActiveMainPageStore();
-
-  // console.log('isActiveMainPageStore', isActiveMainPage)
-// 
-  // const props = defineProps(['activateIsActiveMainPage, deactivateIsActiveMainPage']);
-  // const [activateIsActiveMainPage, deactivateIsActiveMainPage] = props;
-
-
-  
   const props = defineProps({
     activateIsActiveMainPage: {
       type: Function,
@@ -79,8 +93,9 @@
       type: Function,
       required: true
     },
+    isActiveMainPage: {
+      type: Boolean,
+      required: true
+    },
   });
-
-  const { activateIsActiveMainPage, deactivateIsActiveMainPage } = props;
-
 </script>

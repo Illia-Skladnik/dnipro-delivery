@@ -41,7 +41,7 @@
     <section class="header__about-company">
       <TheLogo class="header__logo"/>
       <span class="header__company-name">
-        ЧП Какова суть бренда?
+        ЧП Дніпро-Делівері
       </span>
     </section>
 

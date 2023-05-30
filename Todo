@@ -1,2 +1,4 @@
 Buttons check styles and fix
 Buttons: add isActive style
+Style buttons
+move isactive button to vuex

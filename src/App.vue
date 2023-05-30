@@ -5,19 +5,34 @@
     }
 
     &__sidebar {
-      margin-left: 50px;
-    } 
+      margin-right: 20px;
+      width: 250px;
+    }
+
+    &__page {
+      display: flex;
+      margin: 0 50px;
+    }
+
+    &__content {
+      flex-grow: 1;
+    }
   }
 </style>
 
 <template>
   <main class="main">
     <TheHeader class="main__header"/>
-    <TheSidebar
-      class="main__sidebar"
-      :activateIsActiveMainPage="activateIsActiveMainPage"
-      :deactivateIsActiveMainPage="deactivateIsActiveMainPage"
-    />
+      <section class="main__page">
+        <TheSidebar
+        class="main__sidebar"
+        :activateIsActiveMainPage="activateIsActiveMainPage"
+        :deactivateIsActiveMainPage="deactivateIsActiveMainPage"
+        :isActiveMainPage="isActiveMainPage"
+      />
+      <TheMainLayout class="main__content" v-if="isActiveMainPage"/>
+      <TheAboutUs class="main__content" v-else/>
+    </section>
   </main>
 </template>
 
@@ -25,16 +40,11 @@
 <script setup>
   import TheHeader from './components/TheHeader.vue'
   import TheSidebar from './components/TheSidebar.vue'
+  import TheMainLayout from './components/TheMainLayout.vue'
+  import TheAboutUs from './components/TheAboutUs.vue'
   import { ref } from "vue";
 
   const isActiveMainPage = ref(true);
-
-
-  const activateIsActiveMainPage = () => {
-    isActiveMainPage.value = true;
-  };
-  
-  const deactivateIsActiveMainPage = () => {
-    isActiveMainPage.value = false;
-  };
+  const activateIsActiveMainPage = () => isActiveMainPage.value = true;
+  const deactivateIsActiveMainPage = () => isActiveMainPage.value = false;
 </script>
