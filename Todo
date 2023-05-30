@@ -2,3 +2,9 @@ Buttons check styles and fix
 Buttons: add isActive style
 Style buttons
 move isactive button to vuex
+add footer
+add global variable company name
+add dark/light animation
+rebuild toggler button
+fix button styles
+replace all svgs to the svgs folder

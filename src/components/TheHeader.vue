@@ -32,11 +32,13 @@
 
   &__phone-text {
     line-height: 30px;
+    margin-right: 20px;
   }
 }
 </style>
 
 <template>
+  
   <div class="header">
     <section class="header__about-company">
       <TheLogo class="header__logo"/>
@@ -50,6 +52,7 @@
       <span class="header__phone-text">
         +380 (63) 444-35-08
       </span>
+      <TheThemeToggler/>
     </section>
   </div>
 </template>
@@ -57,4 +60,5 @@
 <script setup>
   import TheLogo from './TheLogo.vue'
   import ThePhoneSvg from './ThePhoneSvg.vue'
+  import TheThemeToggler from './TheThemeToggler.vue'
 </script>

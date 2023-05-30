@@ -26,12 +26,9 @@
       <section class="main__page">
         <TheSidebar
         class="main__sidebar"
-        :activateIsActiveMainPage="activateIsActiveMainPage"
-        :deactivateIsActiveMainPage="deactivateIsActiveMainPage"
-        :isActiveMainPage="isActiveMainPage"
       />
-      <TheMainLayout class="main__content" v-if="isActiveMainPage"/>
-      <TheAboutUs class="main__content" v-else/>
+      <TheMainLayout class="main__content" v-if="activePage.currentPage === 'main'"/>
+      <TheAboutUs class="main__content" v-if="activePage.currentPage === 'about'"/>
     </section>
   </main>
 </template>
@@ -42,9 +39,12 @@
   import TheSidebar from './components/TheSidebar.vue'
   import TheMainLayout from './components/TheMainLayout.vue'
   import TheAboutUs from './components/TheAboutUs.vue'
-  import { ref } from "vue";
+  import { useCurrentPageStore } from "./stores/CurrentPageStore";
+  
+  const activePage = useCurrentPageStore();
+  // import { ref } from "vue";
 
-  const isActiveMainPage = ref(true);
-  const activateIsActiveMainPage = () => isActiveMainPage.value = true;
-  const deactivateIsActiveMainPage = () => isActiveMainPage.value = false;
+  // const isActiveMainPage = ref(true);
+  // const activateIsActiveMainPage = () => isActiveMainPage.value = true;
+  // const deactivateIsActiveMainPage = () => isActiveMainPage.value = false;
 </script>
