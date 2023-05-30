@@ -31,11 +31,13 @@
       <TheAboutUs class="main__content" v-if="activePage.currentPage === 'about'"/>
     </section>
   </main>
+  <TheFooter/>
 </template>
 
 
 <script setup>
   import TheHeader from './components/TheHeader.vue'
+  import TheFooter from './components/TheFooter.vue'
   import TheSidebar from './components/TheSidebar.vue'
   import TheMainLayout from './components/TheMainLayout.vue'
   import TheAboutUs from './components/TheAboutUs.vue'

@@ -42,14 +42,15 @@
     <span class="product-card__text">{{ props.product.title }}</span>
     <span class="product-card__text">{{ props.product.price }}</span>
     <div class="product-card__phone-block">
-      <ThePhoneSvg/>
+      <!-- <ThePhoneSvg/> -->
+      <img class="header__phone-image" :src="phone" alt="phone"/>
       <span>{{ props.product.phones[0] }}</span>
     </div>
   </div>
 </template>
 
 <script setup>
-  import ThePhoneSvg from './ThePhoneSvg.vue'
+  import phone from '../assets/svgs/phone.svg';
   const props = defineProps({
     product: {
       type: Object,

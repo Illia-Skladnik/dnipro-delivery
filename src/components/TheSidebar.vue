@@ -15,7 +15,8 @@
       height: 50px;
       width: 250px;
       border: 1px solid $border-color;
-
+      background-color: rgba(0, 0, 0, 0);
+      
       display: flex;
       justify-content: space-between;
 
@@ -24,11 +25,6 @@
       &--active {
         background-color: $second-color;
       }
-
-      // &--first {
-      //   display: flex;
-      //   justify-content: space-between;
-      // }
     }
 
     &__button-text {
@@ -41,7 +37,6 @@
     }
 
     &__more-sign {
-      // margin: auto 22px auto 0
       margin: auto 20px auto 0;
       
     }
