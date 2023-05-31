@@ -91,7 +91,7 @@
 
     <div class="sidebar__description-block">
       <h3 class="sidebar__description-title">Компанія</h3>
-      <span class="sidebar__description-text">ПП Дніпро-Делівері</span>
+      <span class="sidebar__description-text">{{ variables.companyName }}</span>
     </div>
 
     <div class="sidebar__description-block">
@@ -102,9 +102,11 @@
 </template>
 
 <script setup>
+  import { useGlobalVariablesStore } from "../stores/GlobalVariables";
   import { useCurrentPageStore } from "../stores/CurrentPageStore";
   import moreSign from '../assets/svgs/moresign.svg';
-  
+
+  const variables = useGlobalVariablesStore();
   const activePage = useCurrentPageStore();
 
 </script>

@@ -3,7 +3,7 @@
   .about-us {
     width: 1fr;
     height: fit-content;
-    padding: 5px;
+    padding: 15px;
     background-color: $window-color;
     box-shadow: 0px 2px 4px 0px #00000040;
   }

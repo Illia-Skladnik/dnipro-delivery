@@ -1,0 +1,29 @@
+<style scoped lang="scss">
+  @import '@/assets/styles/variables.scss';
+  .requisites {
+    padding: 5px;
+    background-color: $window-color;
+    box-shadow: 0px 2px 4px 0px #00000040;
+    height: fit-content;
+
+    &__text {
+      display: block;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+  }
+</style>
+
+<template>
+  <div class="requisites">
+    <span class="requisites__text">ФОП Мінін Сергій Валентинович</span>
+    <span class="requisites__text">2787711015</span>
+    <span class="requisites__text">АТ КБ "Приватбанк"</span>
+    <span class="requisites__text">UA 163052990000026007050580231</span>
+    <span class="requisites__text">UAH</span>
+  </div>
+</template>
+
+<script setup> 
+
+</script>

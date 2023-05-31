@@ -43,7 +43,7 @@
     <section class="header__about-company">
       <TheLogo class="header__logo"/>
       <span class="header__company-name">
-        ПП Дніпро-Делівері
+        {{ variables.companyName }}
       </span>
     </section>
 
@@ -58,7 +58,10 @@
 </template>
 
 <script setup>
+  import { useGlobalVariablesStore } from "../stores/GlobalVariables";
   import TheLogo from './TheLogo.vue'
   import phone from '../assets/svgs/phone.svg';
   import TheThemeToggler from './TheThemeToggler.vue'
+
+  const variables = useGlobalVariablesStore();
 </script>

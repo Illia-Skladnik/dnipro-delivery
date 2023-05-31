@@ -14,8 +14,8 @@
 <template>
   <div class="main-layout">
     <TheProductCard
-      class="main-layout__product"
       v-for="product in products"
+      class="main-layout__product"
       :key="product.id"
       :product="product"
     />
