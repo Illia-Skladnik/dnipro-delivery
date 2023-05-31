@@ -1,7 +1,7 @@
 <style scoped lang="scss">
   @import '@/assets/styles/variables.scss';
   .footer {
-    height: 80px;
+    height: #{$footer-header-height}px;
     width: 100%;
     box-shadow: 0px 0px 4px 4px #00000040;
     display: flex;
@@ -26,12 +26,8 @@
     }
 
     &__copyright {
-      // height: 100%;
-      line-height: 100px;
+      line-height: #{$footer-header-height}px;
       margin-right: 100px;
-      // display: block;
-      // text-align: center;
-
     }
   }
 </style>
@@ -41,7 +37,7 @@
     <section class="footer__about-company">
       <TheLogo class="footer__logo"/>
       <span class="footer__company-name">
-        ЧП Дніпро-Делівері
+        Ваші вантажі – наші висоти!
       </span>
     </section>
 

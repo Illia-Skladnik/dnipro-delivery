@@ -29,6 +29,8 @@
       />
       <TheMainLayout class="main__content" v-if="activePage.currentPage === 'main'"/>
       <TheAboutUs class="main__content" v-if="activePage.currentPage === 'about'"/>
+      <TheRequisites class="main__content" v-if="activePage.currentPage === 'requisites'"/>
+      <TheReviews class="main__content" v-if="activePage.currentPage === 'reviews'"/>
     </section>
   </main>
   <TheFooter/>
@@ -41,12 +43,9 @@
   import TheSidebar from './components/TheSidebar.vue'
   import TheMainLayout from './components/TheMainLayout.vue'
   import TheAboutUs from './components/TheAboutUs.vue'
+  import TheReviews from './components/TheReviews.vue'
+  import TheRequisites from './components/TheRequisites.vue'
   import { useCurrentPageStore } from "./stores/CurrentPageStore";
   
   const activePage = useCurrentPageStore();
-  // import { ref } from "vue";
-
-  // const isActiveMainPage = ref(true);
-  // const activateIsActiveMainPage = () => isActiveMainPage.value = true;
-  // const deactivateIsActiveMainPage = () => isActiveMainPage.value = false;
 </script>

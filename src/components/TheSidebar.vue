@@ -32,7 +32,6 @@
       height: 100%;
       align-items: center;
 
-
       margin-left: 15px;
     }
 
@@ -72,9 +71,27 @@
       <img class="sidebar__more-sign" v-if="activePage.currentPage === 'about'" :src="moreSign" alt="sign"/>
     </button>
 
+    <button
+      :class="activePage.currentPage === 'requisites' ? 'sidebar__button--active' : ''"
+      @click="activePage.setCurrentPage('requisites')"
+      class="sidebar__button"
+    >
+      <span class="sidebar__button-text">Реквізити</span>
+      <img class="sidebar__more-sign" v-if="activePage.currentPage === 'requisites'" :src="moreSign" alt="sign"/>
+    </button>
+
+    <button
+      :class="activePage.currentPage === 'reviews' ? 'sidebar__button--active' : ''"
+      @click="activePage.setCurrentPage('reviews')"
+      class="sidebar__button"
+    >
+      <span class="sidebar__button-text">Відгуки</span>
+      <img class="sidebar__more-sign" v-if="activePage.currentPage === 'reviews'" :src="moreSign" alt="sign"/>
+    </button>
+
     <div class="sidebar__description-block">
       <h3 class="sidebar__description-title">Компанія</h3>
-      <span class="sidebar__description-text">ЧП Дніпро-Делівері</span>
+      <span class="sidebar__description-text">ПП Дніпро-Делівері</span>
     </div>
 
     <div class="sidebar__description-block">

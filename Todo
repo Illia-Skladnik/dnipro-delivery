@@ -1,7 +1,9 @@
-add footer
 add global variable company name
 add dark/light animation
 logo should be button
 check fonts
 create general color theme
 create dark color theme
+add animation for modals
+add animation for theme toggler
+rewrite import of the components to auto import

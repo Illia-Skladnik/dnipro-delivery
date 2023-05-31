@@ -2,9 +2,9 @@
   @import '@/assets/styles/variables.scss';
   .about-us {
     width: 1fr;
-    height: 300px;
-    background-color: $window-color;
+    height: fit-content;
     padding: 5px;
+    background-color: $window-color;
     box-shadow: 0px 2px 4px 0px #00000040;
   }
 </style>

@@ -1,39 +1,40 @@
 <style scoped lang="scss">
-.header {
-  height: 80px;
-  display: flex;
-  justify-content: space-between;
-  box-shadow: 0px 4px 4px 0px #00000040;
-
-
-  &__about-company {
+  @import '@/assets/styles/variables.scss';
+  .header {
+    height: #{$footer-header-height}px;
     display: flex;
-    margin-left: 100px;
-  }
+    justify-content: space-between;
+    box-shadow: 0px 4px 4px 0px #00000040;
 
-  &__company-name {
-    display: block;
-    margin: auto 0;
-  }
 
-  &__logo {
-    margin: auto 10px auto 0;
-  }
+    &__about-company {
+      display: flex;
+      margin-left: 100px;
+    }
 
-  &__phone-block {
-    display: flex;
-    margin: auto 100px auto 0;
-  }
+    &__company-name {
+      display: block;
+      margin: auto 0;
+    }
 
-  &__phone-image {
-    margin-right: 20px;
-  }
+    &__logo {
+      margin: auto 10px auto 0;
+    }
 
-  &__phone-text {
-    line-height: 30px;
-    margin-right: 20px;
+    &__phone-block {
+      display: flex;
+      margin: auto 100px auto 0;
+    }
+
+    &__phone-image {
+      margin-right: 20px;
+    }
+
+    &__phone-text {
+      line-height: 30px;
+      margin-right: 20px;
+    }
   }
-}
 </style>
 
 <template>
@@ -42,7 +43,7 @@
     <section class="header__about-company">
       <TheLogo class="header__logo"/>
       <span class="header__company-name">
-        ЧП Дніпро-Делівері
+        ПП Дніпро-Делівері
       </span>
     </section>
 
