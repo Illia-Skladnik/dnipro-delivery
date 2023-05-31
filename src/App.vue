@@ -1,5 +1,7 @@
 <style scoped lang="scss">
   @import '@/assets/styles/variables.scss';
+  @import '@/assets/styles/_mixins.scss';
+
   .main {
     background-color: $primary-color;
     min-height: 100vh;
@@ -14,28 +16,44 @@
     }
 
     &__sidebar {
-      margin-right: 20px;
+      margin-right: #{$main-page-margin}px;
       width: 250px;
+
+      @include onMobile {
+        margin: 0 auto 20px;
+      }
     }
 
     &__page {
       display: flex;
-      margin: 0 50px;
+      margin: 0 #{$main-page-margin}px;
+
+      @include onMobile {
+        flex-direction: column;
+      }
     }
 
     &__content {
       flex-grow: 1;
+
+      @include onMobile {
+        width: min-content;
+        margin: 0 auto 120px;
+      }
     }
 
     &__about {
       width: 85vh;
+
+      @include onMobile {
+        width: 230px;
+        margin: 0 auto 120px;
+      }
     }
   }
 </style>
 
 <template>
-
-
   <main
     class="main"
     :class="dark.isDarkThemeActive ? 'main--dark' : ''"
