@@ -1,8 +1,6 @@
 <style scoped lang="scss">
   @import '@/assets/styles/variables.scss';
   .main-layout {
-    // background-color: $background-color;
-
     display: flex;
     flex-wrap: wrap;
     gap: 20px;

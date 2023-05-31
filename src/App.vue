@@ -1,5 +1,14 @@
 <style scoped lang="scss">
+  @import '@/assets/styles/variables.scss';
   .main {
+    background-color: $primary-color;
+    min-height: 100vh;
+    transition-duration: #{$theme-switch-animation}ms;
+
+    &--dark {
+      background-color: $primary-color-dark;
+    }
+
     &__header {
       margin-bottom: 30px;
     }
@@ -23,7 +32,10 @@
 <template>
 
 
-  <main class="main">
+  <main
+    class="main"
+    :class="dark.isDarkThemeActive ? 'main--dark' : ''"
+  >
     <TheHeader class="main__header"/>
       <section class="main__page">
         <TheSidebar
@@ -48,6 +60,8 @@
   import TheReviews from './components/TheReviews.vue'
   import TheRequisites from './components/TheRequisites.vue'
   import { useCurrentPageStore } from "./stores/CurrentPageStore";
-  
+  import { useDarkThemeStore } from "./stores/DarkThemeStore";
+
+  const dark = useDarkThemeStore();
   const activePage = useCurrentPageStore();
 </script>

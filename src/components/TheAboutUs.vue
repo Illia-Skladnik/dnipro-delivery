@@ -6,11 +6,20 @@
     padding: 15px;
     background-color: $window-color;
     box-shadow: 0px 2px 4px 0px #00000040;
+    transition-duration: #{$theme-switch-animation}ms;
+
+    &--dark {
+      background-color: $window-color-dark;
+      color: $font-color-dark;
+    }
   }
 </style>
 
 <template>
-  <div class="about-us">
+  <div
+    class="about-us"
+    :class="dark.isDarkThemeActive ? 'about-us--dark' : ''"
+  >
     Ласкаво просимо на наш вебсайт!
     Ми пропонуємо вам високоякісні та надійні послуги з організації грузоперевезень. Наша команда зосереджена на створенні сервісу, який відповідає найвищим стандартам якості.
     Ми розуміємо, наскільки важливо для вас мати доступ до надійного та ефективного транспорту для перевезення вантажів. Тому ми працюємо над постійним поліпшенням наших послуг з надання грузових транспортних засобів, щоб забезпечити вам максимальну задоволеність.
@@ -21,6 +30,7 @@
 </template>
 
 <script setup>
+  import { useDarkThemeStore } from "../stores/DarkThemeStore";
 
-
+  const dark = useDarkThemeStore();
 </script>

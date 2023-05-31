@@ -1,6 +1,15 @@
-$window-color:  #f9f9f9;
-$second-color: #c4c4c4;
-$background-color:  rgb(237, 231, 209);
-$border-color: black;
+// Ligh theme site colors:
+$primary-color: #fdfdfd;
+$window-color:  #eeeeee;
+$second-color: #cccccc;
+$border-color: #2d2d2d;
+
+// Dark theme site colors:
+$primary-color-dark: #272633;
+$window-color-dark:  #46455B;
+$second-color-dark: #32293d;
+$font-color-dark: #ffffff;
+$border-color-dark: #c8c8c8;
 
 $footer-header-height: 70;
+$theme-switch-animation: 600;

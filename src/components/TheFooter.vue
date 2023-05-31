@@ -6,10 +6,17 @@
     box-shadow: 0px 0px 4px 4px #00000040;
     display: flex;
     justify-content: space-between;
-    background-color: $background-color;
+    background-color: $window-color;
+
+    transition-duration: #{$theme-switch-animation}ms;
 
     position: fixed;
     bottom: 0;
+
+    &--dark {
+      background-color: $window-color-dark;
+      color: $font-color-dark;
+    }
 
     &__about-company {
       display: flex;
@@ -33,7 +40,10 @@
 </style>
 
 <template>
-  <footer class="footer">
+  <footer
+    class="footer"
+    :class="dark.isDarkThemeActive ? 'footer--dark' : ''"
+  >
     <section class="footer__about-company">
       <TheLogo class="footer__logo"/>
       <span class="footer__company-name">
@@ -47,5 +57,7 @@
 
 <script setup>
   import TheLogo from './TheLogo.vue'
+  import { useDarkThemeStore } from "../stores/DarkThemeStore";
 
+  const dark = useDarkThemeStore();
 </script>

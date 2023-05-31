@@ -4,8 +4,14 @@
     box-shadow: 0px 2px 4px 0px #00000040;
     margin-bottom: 30px;
     padding: 15px;
+    transition-duration: #{$theme-switch-animation}ms;
 
-    background-color: $second-color;
+    background-color: $window-color;
+
+    &--dark {
+      background-color: $window-color-dark;
+      color: $font-color-dark;
+    }
 
     &__text-block {
       display: block;
@@ -39,12 +45,23 @@
 </style>
 
 <template>
-  <div class="review-card">
+  <div
+    class="review-card"
+    :class="dark.isDarkThemeActive ? 'review-card--dark' : ''"
+  >
     <div class="review-card__top-info">
       <div class="review-card__info-block">
         <img
+          v-if="!dark.isDarkThemeActive"
           class="review-card__image"
           :src="user"
+          alt="user"
+        />
+
+        <img
+          v-else
+          class="review-card__image"
+          :src="userDark"
           alt="user"
         />
         <span class="review-card__text">{{ review.client }}</span>
@@ -52,8 +69,16 @@
 
       <div class="review-card__info-block">
         <img
+          v-if="!dark.isDarkThemeActive"
           class="review-card__image"
           :src="calendar"
+          alt="calendar"
+        />
+
+        <img
+          v-else
+          class="review-card__image"
+          :src="calendarDark"
           alt="calendar"
         />
         <span class="review-card__text">{{ review.date }}</span>
@@ -67,8 +92,12 @@
 <script setup>
   import Evaluation from './Evaluation.vue'
   import user from '../assets/svgs/user.svg';
+  import userDark from '../assets/svgs/userDark.svg';
   import calendar from '../assets/svgs/calendar.svg';
+  import calendarDark from '../assets/svgs/calendarDark.svg';
+  import { useDarkThemeStore } from "../stores/DarkThemeStore";
 
+  const dark = useDarkThemeStore();
   defineProps({
     review: {
       type: Object,

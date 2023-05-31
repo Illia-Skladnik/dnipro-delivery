@@ -5,6 +5,12 @@
     background-color: $window-color;
     box-shadow: 0px 2px 4px 0px #00000040;
     height: fit-content;
+    transition-duration: #{$theme-switch-animation}ms;
+
+    &--dark {
+      background-color: $window-color-dark;
+      color: $font-color-dark;
+    }
 
     &__text {
       display: block;
@@ -15,7 +21,10 @@
 </style>
 
 <template>
-  <div class="requisites">
+  <div
+    class="requisites"
+    :class="dark.isDarkThemeActive ? 'requisites--dark' : ''"
+  >
     <span class="requisites__text">ФОП Мінін Сергій Валентинович</span>
     <span class="requisites__text">2787711015</span>
     <span class="requisites__text">АТ КБ "Приватбанк"</span>
@@ -25,5 +34,7 @@
 </template>
 
 <script setup> 
+  import { useDarkThemeStore } from "../stores/DarkThemeStore";
 
+  const dark = useDarkThemeStore();
 </script>

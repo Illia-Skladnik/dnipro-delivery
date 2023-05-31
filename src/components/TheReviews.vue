@@ -7,15 +7,26 @@
 
     height: fit-content;
 
+    margin-bottom: 150px;
+
+    transition-duration: #{$theme-switch-animation}ms;
+
     &__title {
       text-align: center;
       margin-bottom: 30px;
+    }
+
+    &--dark {
+      color: $font-color-dark;
     }
   }
 </style>
 
 <template>
-  <div class="reviews">
+  <div
+    class="reviews"
+    :class="dark.isDarkThemeActive ? 'reviews--dark' : ''"
+  >
     <h2 class="reviews__title">Відгуки про компанію {{ variables.companyName }}</h2>
     <ReviewCard
       v-for="review in variables.reviews"
@@ -28,6 +39,8 @@
 <script setup> 
   import ReviewCard from './ReviewCard.vue'
   import { useGlobalVariablesStore } from "../stores/GlobalVariables";
+  import { useDarkThemeStore } from "../stores/DarkThemeStore";
 
+  const dark = useDarkThemeStore();
   const variables = useGlobalVariablesStore();
 </script>
