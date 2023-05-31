@@ -21,6 +21,8 @@
 </style>
 
 <template>
+
+
   <main class="main">
     <TheHeader class="main__header"/>
       <section class="main__page">

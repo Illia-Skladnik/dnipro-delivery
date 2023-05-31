@@ -96,7 +96,7 @@
 
     <div class="sidebar__description-block">
       <h3 class="sidebar__description-title">Адреса</h3>
-      <span class="sidebar__description-text">м. Дніпро</span>
+      <span class="sidebar__description-text">{{ variables.address }}</span>
     </div>
   </div>
 </template>

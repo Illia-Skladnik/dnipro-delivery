@@ -18,7 +18,7 @@
   <div class="reviews">
     <h2 class="reviews__title">Відгуки про компанію {{ variables.companyName }}</h2>
     <ReviewCard
-      v-for="review in reviews"
+      v-for="review in variables.reviews"
       :key="review.id"
       :review="review"
     />
@@ -30,27 +30,4 @@
   import { useGlobalVariablesStore } from "../stores/GlobalVariables";
 
   const variables = useGlobalVariablesStore();
-  const reviews = {
-    1: {
-      id: 1,
-      client: 'Олександр',
-      stars: 5,
-      date: '12.03.2023',
-      text: 'А щебьоночка у вас є?',
-    },
-    2: {
-      id: 2,
-      client: 'не Олександр',
-      stars: 4,
-      date: '02.11.2022',
-      text: 'Дуже сподобався кран дуже високий. Але є одне зауваження – коли дивишся на нього вгору, починає крутитися голова. Тож мінус одна зірка.',
-    },
-    3: {
-      id: 3,
-      client: 'Олександра',
-      stars: 5,
-      date: '15.07.2023',
-      text: 'Достатньо потужна машина. Та чи впорається вона з вантажем моїх нездійснених надій?',
-    },
-  }
 </script>

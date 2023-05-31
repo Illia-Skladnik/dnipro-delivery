@@ -12,7 +12,28 @@
     }
 
     &__top-info {
-      margin-bottom: 10px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__image {
+      margin-right: 6px;
+    }
+
+    &__info-block {
+      display: flex;
+      margin-right: 20px;
+    }
+
+    &__text {
+      line-height: 25px;
+    }
+
+    &__review-text {
+      display: flex;
+      justify-content: center;
     }
   }
 </style>
@@ -20,14 +41,33 @@
 <template>
   <div class="review-card">
     <div class="review-card__top-info">
-      <span>{{ review.client }}</span>
-    <span>{{ review.date }}</span>
+      <div class="review-card__info-block">
+        <img
+          class="review-card__image"
+          :src="user"
+          alt="user"
+        />
+        <span class="review-card__text">{{ review.client }}</span>
+      </div>
+
+      <div class="review-card__info-block">
+        <img
+          class="review-card__image"
+          :src="calendar"
+          alt="calendar"
+        />
+        <span class="review-card__text">{{ review.date }}</span>
+        </div>
+      <Evaluation :stars="review.stars"/>
     </div>
-    <span class="review-card__text-block">{{ review.text }}</span>
+    <span class="review-card__review-text">{{ review.text }}</span>
   </div>
 </template>
 
 <script setup>
+  import Evaluation from './Evaluation.vue'
+  import user from '../assets/svgs/user.svg';
+  import calendar from '../assets/svgs/calendar.svg';
 
   defineProps({
     review: {

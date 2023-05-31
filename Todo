@@ -7,3 +7,4 @@ create dark color theme
 add animation for modals
 add animation for theme toggler
 rewrite import of the components to auto import
+rewrite telephones
