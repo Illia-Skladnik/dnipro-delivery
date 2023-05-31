@@ -8,6 +8,8 @@
 
     background-color: $window-color;
 
+    border-radius: 5px;
+
     &--dark {
       background-color: $window-color-dark;
       color: $font-color-dark;
@@ -64,7 +66,7 @@
           :src="userDark"
           alt="user"
         />
-        <span class="review-card__text">{{ review.client }}</span>
+        <h4 class="review-card__text">{{ review.client }}</h4>
       </div>
 
       <div class="review-card__info-block">

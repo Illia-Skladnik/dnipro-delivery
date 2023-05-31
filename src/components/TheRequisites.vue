@@ -7,6 +7,8 @@
     height: fit-content;
     transition-duration: #{$theme-switch-animation}ms;
 
+    border-radius: 5px;
+
     &--dark {
       background-color: $window-color-dark;
       color: $font-color-dark;
@@ -25,7 +27,7 @@
     class="requisites"
     :class="dark.isDarkThemeActive ? 'requisites--dark' : ''"
   >
-    <span class="requisites__text">ФОП Мінін Сергій Валентинович</span>
+    <h4 class="requisites__text">ФОП Мінін Сергій Валентинович</h4>
     <span class="requisites__text">2787711015</span>
     <span class="requisites__text">АТ КБ "Приватбанк"</span>
     <span class="requisites__text">UA 163052990000026007050580231</span>

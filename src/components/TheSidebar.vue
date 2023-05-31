@@ -9,6 +9,13 @@
 
     transition-duration: #{$theme-switch-animation}ms;
 
+    border-radius: 5px;
+
+    button:first-of-type {
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+
     button:last-of-type {
       margin-bottom: 30px;
     }
@@ -23,6 +30,7 @@
       width: 250px;
       border: 1px solid $border-color;
       background-color: rgba(0, 0, 0, 0);
+      font-family: inherit;
       
       display: flex;
       justify-content: space-between;

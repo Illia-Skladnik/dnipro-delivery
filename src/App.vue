@@ -26,6 +26,10 @@
     &__content {
       flex-grow: 1;
     }
+
+    &__about {
+      width: 85vh;
+    }
   }
 </style>
 
@@ -42,7 +46,7 @@
         class="main__sidebar"
       />
       <TheMainLayout class="main__content" v-if="activePage.currentPage === 'main'"/>
-      <TheAboutUs class="main__content" v-if="activePage.currentPage === 'about'"/>
+      <TheAboutUs class=" main__about" v-if="activePage.currentPage === 'about'"/>
       <TheRequisites class="main__content" v-if="activePage.currentPage === 'requisites'"/>
       <TheReviews class="main__content" v-if="activePage.currentPage === 'reviews'"/>
     </section>

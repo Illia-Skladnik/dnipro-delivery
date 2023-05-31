@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 
 export const useGlobalVariablesStore = defineStore('GlobalVariablesStore', () => {
   const companyName = 'ФОП Мінін Сергій Валентинович';
-  const address = 'м. Дніпро';
+  const address = 'м. Дніпро, Україна';
   const reviews = {
     1: {
       id: 1,

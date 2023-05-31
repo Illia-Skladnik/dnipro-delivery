@@ -19,6 +19,12 @@
     &--dark {
       color: $font-color-dark;
     }
+
+    &__review{
+      &:hover {
+        scale: 1.015;
+      }
+    }
   }
 </style>
 
@@ -29,6 +35,7 @@
   >
     <h2 class="reviews__title">Відгуки про компанію {{ variables.companyName }}</h2>
     <ReviewCard
+      class="reviews__review"
       v-for="review in variables.reviews"
       :key="review.id"
       :review="review"

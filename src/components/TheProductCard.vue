@@ -6,6 +6,9 @@
     transition-duration: #{$theme-switch-animation}ms;
     box-shadow: 0px 2px 4px 0px #00000040;
 
+    border-radius: 5px;
+    overflow: hidden;
+
     &--dark {
       background-color: $window-color-dark;
       color: $font-color-dark;
@@ -19,6 +22,7 @@
       width: 100%;
       height: 200px;
       object-fit: cover;
+      
 
       margin-bottom: 10px;
     }
@@ -64,7 +68,7 @@
       class="product-card__image"
       :src="'/src/assets/images/product-images/' + product.image"
     />
-    <span class="product-card__text">{{ product.title }}</span>
+    <h4 class="product-card__text">{{ product.title }}</h4>
     <span class="product-card__text">{{ product.price }}</span>
     <div class="product-card__phone-block">
       <img v-if="!dark.isDarkThemeActive" class="product-card__phone-image" :src="phone" alt="phone"/>
