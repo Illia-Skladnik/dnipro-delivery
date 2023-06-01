@@ -1,9 +1,14 @@
 <style scoped lang="scss">
+  @import '@/assets/styles/_mixins.scss'; 
   .evaluation {
     display: flex;
 
     .evaluation__star:last-of-type {
       margin-right: 15px;
+
+      @include onMobile {
+        margin-right: 5px;
+      }
     }
 
     &__star {

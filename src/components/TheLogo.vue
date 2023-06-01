@@ -1,6 +1,9 @@
 <style scoped lang="scss">
   .logo {
-
+    :hover {
+      transition-duration: 5s;
+      transform: translateX(90vw);
+    }
   }
 </style>
 

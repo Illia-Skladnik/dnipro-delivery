@@ -1,5 +1,6 @@
 <style scoped lang="scss">
   @import '@/assets/styles/variables.scss';
+  @import '@/assets/styles/_mixins.scss';
 
   .reviews {
     display: flex;
@@ -14,6 +15,11 @@
     &__title {
       text-align: center;
       margin-bottom: 30px;
+
+      @include onMobile {
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
     }
 
     &--dark {

@@ -65,6 +65,9 @@
     &__more-sign {
       margin: auto 20px auto 0;
       
+      @include onMobile {
+        transform: rotate(90deg);
+      }
     }
 
     &__description-block {
@@ -74,6 +77,18 @@
 
     &__description-title {
       margin-bottom: 15px;
+    }
+
+    &__phone {
+      display: block;
+    }
+
+    &__contacts {
+      display: none;
+
+      @include onMobile {
+        display: block;
+      }
     }
   }
 </style>
@@ -144,6 +159,12 @@
     <div class="sidebar__description-block">
       <h3 class="sidebar__description-title">Адреса</h3>
       <span class="sidebar__description-text">{{ variables.address }}</span>
+    </div>
+
+    <div class="sidebar__description-block sidebar__contacts">
+      <h3 class="sidebar__description-title">Контакти</h3>
+      <span class="sidebar__description-text sidebar__phone">{{ variables.phones[0] }}</span>
+      <span class="sidebar__description-text sidebar__phone">{{ variables.phones[1] }}</span>
     </div>
   </div>
 </template>

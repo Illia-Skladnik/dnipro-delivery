@@ -1,5 +1,6 @@
 <style scoped lang="scss">
   @import '@/assets/styles/variables.scss';
+  @import '@/assets/styles/_mixins.scss';
   .review-card {
     box-shadow: 0px 2px 4px 0px #00000040;
     margin-bottom: 30px;
@@ -9,6 +10,10 @@
     background-color: $window-color;
 
     border-radius: 5px;
+
+    @include onMobile {
+      width: 250px;
+    }
 
     &--dark {
       background-color: $window-color-dark;
@@ -24,6 +29,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
+
+      @include onMobile {
+        flex-direction: column;
+        margin-bottom: 10px;
+      }
     }
 
     &__image {
@@ -33,6 +43,10 @@
     &__info-block {
       display: flex;
       margin-right: 20px;
+
+      @include onMobile {
+        margin-bottom: 5px;
+      }
     }
 
     &__text {
