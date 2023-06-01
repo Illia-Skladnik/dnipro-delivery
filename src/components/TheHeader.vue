@@ -1,5 +1,6 @@
 <style scoped lang="scss">
   @import '@/assets/styles/variables.scss';
+  @import '@/assets/styles/_mixins.scss';
   
   .header {
     height: #{$footer-header-height}px;
@@ -9,6 +10,10 @@
     background-color: $window-color;
     transition-duration: #{$theme-switch-animation}ms;
 
+    @include onMobile {
+      height: #{$footer-header-height - 20}px;
+    }
+
     &--dark {
       background-color: $window-color-dark;
     }
@@ -17,6 +22,10 @@
     &__about-company {
       display: flex;
       margin-left: 100px;
+
+      @include onMobile {
+        margin-left: 20px;
+      }
     }
 
     &__company-name {
@@ -37,10 +46,18 @@
       display: flex;
       align-items: center;
       margin: auto 100px auto 0;
+
+      @include onMobile {
+        margin-right: 20px;
+      }
     }
 
     &__phone-image {
       margin-right: 20px;
+
+      @include onMobile {
+        display: none;
+      }
     }
 
     &__phone-text {
@@ -59,6 +76,10 @@
     &__phones-wrapper {
       display: flex;
       flex-direction: column;
+
+      @include onMobile {
+        display: none;
+      }
     }
   }
 </style>

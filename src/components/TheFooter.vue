@@ -1,5 +1,6 @@
 <style scoped lang="scss">
   @import '@/assets/styles/variables.scss';
+  @import '@/assets/styles/_mixins.scss';
   .footer {
     height: #{$footer-header-height}px;
     width: 100%;
@@ -13,6 +14,10 @@
     position: fixed;
     bottom: 0;
 
+    @include onMobile {
+      height: #{$footer-header-height - 20}px;
+    }
+
     &--dark {
       background-color: $window-color-dark;
       color: $font-color-dark;
@@ -21,6 +26,10 @@
     &__about-company {
       display: flex;
       margin-left: 100px;
+
+      @include onMobile {
+        margin-left: 20px;
+      }
     }
 
     &__company-name {
@@ -35,6 +44,10 @@
     &__copyright {
       line-height: #{$footer-header-height}px;
       margin-right: 100px;
+
+      @include onMobile {
+        display: none;
+      }
     }
   }
 </style>

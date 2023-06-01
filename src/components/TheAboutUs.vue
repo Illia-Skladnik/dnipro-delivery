@@ -13,7 +13,6 @@
       background-color: $window-color-dark;
       color: $font-color-dark;
     }
-
   }
 </style>
 

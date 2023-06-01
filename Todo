@@ -1,1 +1,4 @@
 rewrite import of the components to auto import
+
+transition-duration: 10s;
+transform: translateX(100vw);

@@ -30,6 +30,7 @@
 
       @include onMobile {
         flex-direction: column;
+        margin: 0;
       }
     }
 
@@ -46,7 +47,8 @@
       width: 85vh;
 
       @include onMobile {
-        width: 230px;
+        width: 250px;
+        
         margin: 0 auto 120px;
       }
     }

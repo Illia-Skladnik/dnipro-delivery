@@ -23,7 +23,6 @@
       height: 200px;
       object-fit: cover;
       
-
       margin-bottom: 10px;
     }
 
