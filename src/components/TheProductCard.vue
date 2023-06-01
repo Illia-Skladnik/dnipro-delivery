@@ -66,7 +66,7 @@
   >
     <img
       class="product-card__image"
-      :src="require('@/assets/images/product-images/' + product.image)"
+      :src="require('@/assets/images/product-images/1.png')"
     />
     <h4 class="product-card__text">{{ product.title }}</h4>
     <span class="product-card__text">{{ product.price }}</span>
