@@ -30,7 +30,7 @@
       justify-content: center;
       align-items: center;
 
-      @include onMobile {
+      @include onTablet {
         flex-direction: column;
         margin-bottom: 10px;
       }
