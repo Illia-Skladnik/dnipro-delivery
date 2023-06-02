@@ -54,9 +54,16 @@
 
     &__phone-image {
       margin-right: 20px;
+      width: 26px;
+      height: 26px;
 
       @include onMobile {
         display: none;
+      }
+
+      &--dark {
+        width: 22px;
+        height: 22px;
       }
     }
 
@@ -101,8 +108,8 @@
     </section>
 
     <section class="header__phone-block">
-      <img v-if="!dark.isDarkThemeActive" class="header__phone-image" :src="phone" alt="phone"/>
-      <img v-else class="header__phone-image" :src="phoneDark" alt="phone"/>
+      <img v-if="!dark.isDarkThemeActive" class="header__phone-image" :src="phone" alt="phone sign"/>
+      <img v-else class="header__phone-image header__phone-image--dark" :src="phoneDark" alt="phone sign dark"/>
         <div class="header__phones-wrapper">
           <span
             class="header__phone-text"

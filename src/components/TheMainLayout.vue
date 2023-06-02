@@ -62,6 +62,13 @@
 
     &__phone-image {
       margin-right: 6px;
+      height: 26px;
+      width: 26px;
+
+      &--dark {
+        height: 22px;
+        width: 22px;
+      }
     }
   }
 </style>
@@ -74,13 +81,14 @@
     >
       <img
         class="product-card__image"
-        :src="require('@/assets/images/product-images/1.png')"
+        :src="require('@/assets/images/product-images/1.avif')"
+        alt="product image"
       />
       <h4 class="product-card__text">{{ products[0].title }}</h4>
       <span class="product-card__text">{{ products[0].price }}</span>
       <div class="product-card__phone-block">
-        <img v-if="!dark.isDarkThemeActive" class="product-card__phone-image" :src="phone" alt="phone"/>
-        <img v-else class="product-card__phone-image" :src="phoneDark" alt="phone"/>
+        <img v-if="!dark.isDarkThemeActive" class="product-card__phone-image" :src="phone" alt="phone imge"/>
+        <img v-else class="product-card__phone-image product-card__phone-image--dark" :src="phoneDark" alt="phone image dark"/>
         <div class="product-card__phone-wrapper">
           <span class="product-card__phone-number">{{ variables.phones[0] }}</span>
           <span class="product-card__phone-number">{{ variables.phones[1] }}</span>
@@ -94,13 +102,14 @@
     >
       <img
         class="product-card__image"
-        :src="require('@/assets/images/product-images/2.png')"
+        :src="require('@/assets/images/product-images/2.avif')"
+        alt="product image"
       />
       <h4 class="product-card__text">{{ products[1].title }}</h4>
       <span class="product-card__text">{{ products[1].price }}</span>
       <div class="product-card__phone-block">
-        <img v-if="!dark.isDarkThemeActive" class="product-card__phone-image" :src="phone" alt="phone"/>
-        <img v-else class="product-card__phone-image" :src="phoneDark" alt="phone"/>
+        <img v-if="!dark.isDarkThemeActive" class="product-card__phone-image" :src="phone" alt="phone image"/>
+        <img v-else class="product-card__phone-image" :src="phoneDark" alt="phone image dark"/>
         <div class="product-card__phone-wrapper">
           <span class="product-card__phone-number">{{ variables.phones[0] }}</span>
           <span class="product-card__phone-number">{{ variables.phones[1] }}</span>
@@ -114,13 +123,14 @@
     >
       <img
         class="product-card__image"
-        :src="require('@/assets/images/product-images/3.png')"
+        :src="require('@/assets/images/product-images/3.avif')"
+        alt="product image"
       />
       <h4 class="product-card__text">{{ products[2].title }}</h4>
       <span class="product-card__text">{{ products[2].price }}</span>
       <div class="product-card__phone-block">
-        <img v-if="!dark.isDarkThemeActive" class="product-card__phone-image" :src="phone" alt="phone"/>
-        <img v-else class="product-card__phone-image" :src="phoneDark" alt="phone"/>
+        <img v-if="!dark.isDarkThemeActive" class="product-card__phone-image" :src="phone" alt="phone image"/>
+        <img v-else class="product-card__phone-image" :src="phoneDark" alt="phone image dark"/>
         <div class="product-card__phone-wrapper">
           <span class="product-card__phone-number">{{ variables.phones[0] }}</span>
           <span class="product-card__phone-number">{{ variables.phones[1] }}</span>
@@ -134,13 +144,14 @@
     >
       <img
         class="product-card__image"
-        :src="require('@/assets/images/product-images/4.png')"
+        :src="require('@/assets/images/product-images/4.avif')"
+        alt="product image"
       />
       <h4 class="product-card__text">{{ products[3].title }}</h4>
       <span class="product-card__text">{{ products[3].price }}</span>
       <div class="product-card__phone-block">
-        <img v-if="!dark.isDarkThemeActive" class="product-card__phone-image" :src="phone" alt="phone"/>
-        <img v-else class="product-card__phone-image" :src="phoneDark" alt="phone"/>
+        <img v-if="!dark.isDarkThemeActive" class="product-card__phone-image" :src="phone" alt="phone image"/>
+        <img v-else class="product-card__phone-image" :src="phoneDark" alt="phone image dark"/>
         <div class="product-card__phone-wrapper">
           <span class="product-card__phone-number">{{ variables.phones[0] }}</span>
           <span class="product-card__phone-number">{{ variables.phones[1] }}</span>
@@ -154,13 +165,14 @@
     >
       <img
         class="product-card__image"
-        :src="require('@/assets/images/product-images/5.png')"
+        :src="require('@/assets/images/product-images/5.avif')"
+        alt="product image"
       />
       <h4 class="product-card__text">{{ products[4].title }}</h4>
       <span class="product-card__text">{{ products[4].price }}</span>
       <div class="product-card__phone-block">
-        <img v-if="!dark.isDarkThemeActive" class="product-card__phone-image" :src="phone" alt="phone"/>
-        <img v-else class="product-card__phone-image" :src="phoneDark" alt="phone"/>
+        <img v-if="!dark.isDarkThemeActive" class="product-card__phone-image" :src="phone" alt="phone image"/>
+        <img v-else class="product-card__phone-image" :src="phoneDark" alt="phone image dark"/>
         <div class="product-card__phone-wrapper">
           <span class="product-card__phone-number">{{ variables.phones[0] }}</span>
           <span class="product-card__phone-number">{{ variables.phones[1] }}</span>
@@ -174,13 +186,14 @@
     >
       <img
         class="product-card__image"
-        :src="require('@/assets/images/product-images/6.png')"
+        :src="require('@/assets/images/product-images/6.avif')"
+        alt="product image"
       />
       <h4 class="product-card__text">{{ products[5].title }}</h4>
       <span class="product-card__text">{{ products[5].price }}</span>
       <div class="product-card__phone-block">
-        <img v-if="!dark.isDarkThemeActive" class="product-card__phone-image" :src="phone" alt="phone"/>
-        <img v-else class="product-card__phone-image" :src="phoneDark" alt="phone"/>
+        <img v-if="!dark.isDarkThemeActive" class="product-card__phone-image" :src="phone" alt="phone image"/>
+        <img v-else class="product-card__phone-image" :src="phoneDark" alt="phone image dark"/>
         <div class="product-card__phone-wrapper">
           <span class="product-card__phone-number">{{ variables.phones[0] }}</span>
           <span class="product-card__phone-number">{{ variables.phones[1] }}</span>
@@ -194,13 +207,14 @@
     >
       <img
         class="product-card__image"
-        :src="require('@/assets/images/product-images/7.png')"
+        :src="require('@/assets/images/product-images/7.avif')"
+        alt="product image"
       />
       <h4 class="product-card__text">{{ products[6].title }}</h4>
       <span class="product-card__text">{{ products[6].price }}</span>
       <div class="product-card__phone-block">
-        <img v-if="!dark.isDarkThemeActive" class="product-card__phone-image" :src="phone" alt="phone"/>
-        <img v-else class="product-card__phone-image" :src="phoneDark" alt="phone"/>
+        <img v-if="!dark.isDarkThemeActive" class="product-card__phone-image" :src="phone" alt="phone image"/>
+        <img v-else class="product-card__phone-image" :src="phoneDark" alt="phone image dark"/>
         <div class="product-card__phone-wrapper">
           <span class="product-card__phone-number">{{ variables.phones[0] }}</span>
           <span class="product-card__phone-number">{{ variables.phones[1] }}</span>

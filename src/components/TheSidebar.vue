@@ -64,6 +64,8 @@
 
     &__more-sign {
       margin: auto 20px auto 0;
+      height: 19px;
+      width: 10px;
       
       @include onMobile {
         transform: rotate(90deg);
@@ -108,8 +110,8 @@
       ]"
     >
       <span class="sidebar__button-text">Що ми маємо</span>
-      <img class="sidebar__more-sign" v-if="activePage.currentPage === 'main' && !dark.isDarkThemeActive" :src="moreSign" alt="sign"/>
-      <img class="sidebar__more-sign" v-if="activePage.currentPage === 'main' && dark.isDarkThemeActive" :src="moreSignDark" alt="sign"/>
+      <img class="sidebar__more-sign" v-if="activePage.currentPage === 'main' && !dark.isDarkThemeActive" :src="moreSign" alt="sign arrow"/>
+      <img class="sidebar__more-sign" v-if="activePage.currentPage === 'main' && dark.isDarkThemeActive" :src="moreSignDark" alt="sign arrow dark"/>
     </button >
 
     <button
@@ -122,8 +124,8 @@
       class="sidebar__button"
     >
       <span class="sidebar__button-text">Про нас</span>
-      <img class="sidebar__more-sign" v-if="activePage.currentPage === 'about' && !dark.isDarkThemeActive" :src="moreSign" alt="sign"/>
-      <img class="sidebar__more-sign" v-if="activePage.currentPage === 'about' && dark.isDarkThemeActive" :src="moreSignDark" alt="sign"/>    </button>
+      <img class="sidebar__more-sign" v-if="activePage.currentPage === 'about' && !dark.isDarkThemeActive" :src="moreSign" alt="sign arrow"/>
+      <img class="sidebar__more-sign" v-if="activePage.currentPage === 'about' && dark.isDarkThemeActive" :src="moreSignDark" alt="sign arrow dark"/>    </button>
 
     <button
       :class="[
@@ -135,8 +137,8 @@
       class="sidebar__button"
     >
       <span class="sidebar__button-text">Реквізити</span>
-      <img class="sidebar__more-sign" v-if="activePage.currentPage === 'requisites' && !dark.isDarkThemeActive" :src="moreSign" alt="sign"/>
-      <img class="sidebar__more-sign" v-if="activePage.currentPage === 'requisites' && dark.isDarkThemeActive" :src="moreSignDark" alt="sign"/>    </button>
+      <img class="sidebar__more-sign" v-if="activePage.currentPage === 'requisites' && !dark.isDarkThemeActive" :src="moreSign" alt="sign arrow"/>
+      <img class="sidebar__more-sign" v-if="activePage.currentPage === 'requisites' && dark.isDarkThemeActive" :src="moreSignDark" alt="sign arrow dark"/>    </button>
 
     <button
       :class="[
@@ -148,8 +150,8 @@
       class="sidebar__button"
     >
       <span class="sidebar__button-text">Відгуки</span>
-      <img class="sidebar__more-sign" v-if="activePage.currentPage === 'reviews' && !dark.isDarkThemeActive" :src="moreSign" alt="sign"/>
-      <img class="sidebar__more-sign" v-if="activePage.currentPage === 'reviews' && dark.isDarkThemeActive" :src="moreSignDark" alt="sign"/>    </button>
+      <img class="sidebar__more-sign" v-if="activePage.currentPage === 'reviews' && !dark.isDarkThemeActive" :src="moreSign" alt="sign arrow"/>
+      <img class="sidebar__more-sign" v-if="activePage.currentPage === 'reviews' && dark.isDarkThemeActive" :src="moreSignDark" alt="sign arrow dark"/>    </button>
 
     <div class="sidebar__description-block">
       <h3 class="sidebar__description-title">Компанія</h3>

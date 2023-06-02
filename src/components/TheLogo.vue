@@ -4,13 +4,18 @@
       transition-duration: 5s;
       transform: translateX(90vw);
     }
+
+    &__sign {
+      height: 40px;
+      width: 58px;
+    }
   }
 </style>
 
 <template>
   <section class="logo">
-    <img v-if="!dark.isDarkThemeActive" :src="logo" alt="sign"/>
-    <img v-else :src="logoDark" alt="sign"/>
+    <img class="logo__sign" v-if="!dark.isDarkThemeActive" :src="logo" alt="logo sign"/>
+    <img class="logo__sign" v-else :src="logoDark" alt="logo sign dark"/>
   </section>
 </template>
 

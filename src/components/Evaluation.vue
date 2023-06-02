@@ -32,8 +32,8 @@
       v-for="index in 5"
       :key="index"
     >
-      <img v-if="stars >= index" :src="starActive" alt="star"/>
-      <img v-else :src="starInactive" alt="star"/>
+      <img v-if="stars >= index" :src="starActive" alt="star-active"/>
+      <img v-else :src="starInactive" alt="star-inactive"/>
     </div>
 
     <span class="evaluation__text">{{ evaluation }}</span>

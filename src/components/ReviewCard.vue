@@ -71,14 +71,14 @@
           v-if="!dark.isDarkThemeActive"
           class="review-card__image"
           :src="user"
-          alt="user"
+          alt="user-logo"
         />
 
         <img
           v-else
           class="review-card__image"
           :src="userDark"
-          alt="user"
+          alt="user-logo-dark"
         />
         <h4 class="review-card__text">{{ review.client }}</h4>
       </div>
@@ -88,14 +88,14 @@
           v-if="!dark.isDarkThemeActive"
           class="review-card__image"
           :src="calendar"
-          alt="calendar"
+          alt="calendar-logo"
         />
 
         <img
           v-else
           class="review-card__image"
           :src="calendarDark"
-          alt="calendar"
+          alt="calendar-logo-dark"
         />
         <span class="review-card__text">{{ review.date }}</span>
         </div>

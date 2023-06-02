@@ -24,6 +24,16 @@
     &--dark {
       border-color: $border-color-dark;
     }
+
+    &__image {
+      width: 30px;
+      height: 30px;
+
+      &--dark {
+        width: 20px;
+        height: 24px;
+      }
+    }
   }
 </style>
 
@@ -35,8 +45,8 @@
     :class="darkTheme.isDarkThemeActive ? 'theme-toggler--dark' : ''"
     @click="darkTheme.toggleIsDarkThemeActive"
   >
-    <img class="theme-toggler__image" v-if="!darkTheme.isDarkThemeActive" :src="sun" alt="sun"/>
-    <img class="theme-toggler__image" v-else :src="moon" alt="moon"/>
+    <img class="theme-toggler__image" v-if="!darkTheme.isDarkThemeActive" :src="sun" alt="sun sign"/>
+    <img class="theme-toggler__image theme-toggler__dark" v-else :src="moon" alt="moon sign"/>
   </TransitionGroup>
 </template>
 
