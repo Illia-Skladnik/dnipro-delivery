@@ -2,7 +2,7 @@
   @import '@/assets/styles/variables.scss';
   .about-us {
     height: fit-content;
-    padding: 15px;
+    padding: 20px;
     background-color: $window-color;
     box-shadow: 0px 2px 4px 0px #00000040;
     transition-duration: #{$theme-switch-animation}ms;

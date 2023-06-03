@@ -76,13 +76,13 @@
 
 
 <script setup>
-  import TheHeader from './components/TheHeader.vue'
-  import TheFooter from './components/TheFooter.vue'
-  import TheSidebar from './components/TheSidebar.vue'
-  import TheMainLayout from './components/TheMainLayout.vue'
-  import TheAboutUs from './components/TheAboutUs.vue'
-  import TheReviews from './components/TheReviews.vue'
-  import TheRequisites from './components/TheRequisites.vue'
+  import TheHeader from './components/TheHeader.vue';
+  import TheFooter from './components/TheFooter.vue';
+  import TheSidebar from './components/TheSidebar.vue';
+  import TheMainLayout from './components/TheMainLayout.vue';
+  import TheAboutUs from './components/TheAboutUs.vue';
+  import TheReviews from './components/TheReviews.vue';
+  import TheRequisites from './components/TheRequisites.vue';
   import { useCurrentPageStore } from "./stores/CurrentPageStore";
   import { useDarkThemeStore } from "./stores/DarkThemeStore";
 

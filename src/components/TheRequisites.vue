@@ -1,7 +1,7 @@
 <style scoped lang="scss">
   @import '@/assets/styles/variables.scss';
   .requisites {
-    padding: 5px;
+    padding: 20px;
     background-color: $window-color;
     box-shadow: 0px 2px 4px 0px #00000040;
     height: fit-content;

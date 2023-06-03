@@ -40,20 +40,26 @@
     :class="dark.isDarkThemeActive ? 'reviews--dark' : ''"
   >
     <h2 class="reviews__title">Відгуки про компанію {{ variables.companyName }}</h2>
-    <ReviewCard
-      class="reviews__review"
-      v-for="review in variables.reviews"
-      :key="review.id"
-      :review="review"
-    />
+      <FeedbackForm/>
+      <ReviewCard
+        class="reviews__review"
+        v-for="reviewData in reviewsStore.allReviews"
+
+        :reviewData="reviewData"
+      />
   </div>
 </template>
 
 <script setup> 
   import ReviewCard from './ReviewCard.vue'
   import { useGlobalVariablesStore } from "../stores/GlobalVariables";
+  import { useReviewsStore } from "../stores/ReviewsStore";
   import { useDarkThemeStore } from "../stores/DarkThemeStore";
-
+  import FeedbackForm from './FeedbackForm.vue'
+  
   const dark = useDarkThemeStore();
   const variables = useGlobalVariablesStore();
+  const reviewsStore = useReviewsStore()
+
+  reviewsStore.getAllReviews();
 </script>

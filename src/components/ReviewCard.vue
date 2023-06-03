@@ -80,7 +80,7 @@
           :src="userDark"
           alt="user-logo-dark"
         />
-        <h4 class="review-card__text">{{ review.client }}</h4>
+        <h4 class="review-card__text">{{ review.name }}</h4>
       </div>
 
       <div class="review-card__info-block">
@@ -99,9 +99,9 @@
         />
         <span class="review-card__text">{{ review.date }}</span>
         </div>
-      <Evaluation :stars="review.stars"/>
+      <Evaluation :stars="review.grade"/>
     </div>
-    <span class="review-card__review-text">{{ review.text }}</span>
+    <span class="review-card__review-text">{{ review.review }}</span>
   </div>
 </template>
 
@@ -114,10 +114,11 @@
   import { useDarkThemeStore } from "../stores/DarkThemeStore";
 
   const dark = useDarkThemeStore();
-  defineProps({
-    review: {
-      type: Object,
+  const props = defineProps({
+    reviewData: {
       required: true
     },
   });
+
+  const review = props.reviewData.data();
 </script>

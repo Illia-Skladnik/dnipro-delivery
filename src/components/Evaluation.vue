@@ -33,7 +33,8 @@
       :key="index"
     >
       <img v-if="stars >= index" :src="starActive" alt="star-active"/>
-      <img v-else :src="starInactive" alt="star-inactive"/>
+      <img v-else-if="dark.isDarkThemeActive" :src="starInactive" alt="star-inactive"/>
+      <img v-else :src="starInactiveFrame" alt="star-inactive"/>
     </div>
 
     <span class="evaluation__text">{{ evaluation }}</span>
@@ -43,7 +44,10 @@
 <script setup>
   import starActive from '../assets/svgs/starActive.svg';
   import starInactive from '../assets/svgs/starInactive.svg';
+  import starInactiveFrame from '../assets/svgs/starInactiveFrame.svg';
+  import { useDarkThemeStore } from "../stores/DarkThemeStore";
 
+  const dark = useDarkThemeStore();
   const props = defineProps({
     stars: {
       type: Number,

@@ -8,9 +8,20 @@ $border-color: #2d2d2d;
 $primary-color-dark: #272633;
 $window-color-dark:  #46455B;
 $second-color-dark: #32293d;
-$font-color-dark: #ffffff;
+$font-color-dark: rgb(255, 255, 255);
 $border-color-dark: #c8c8c8;
+
+$font-color-dark-placholder: rgba(255, 255, 255, 0.5);
 
 $footer-header-height: 70;
 $theme-switch-animation: 600;
 $main-page-margin: 40;
+
+@keyframes slideRight {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
