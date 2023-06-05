@@ -11,7 +11,7 @@
       height: 292px;
       margin-bottom: 30px;
     }
-    
+
     width: 100%;
     position: absolute;
     box-shadow: 0px 2px 4px 0px #00000040;
@@ -25,11 +25,20 @@
     &__thanks {
       width: 100%;
       position: absolute;
-      background-color: salmon;
+      background-color: $window-color;
       height: 292px;
       border-radius: 5px;
       margin-bottom: 30px;
       z-index: 1;
+      box-shadow: 0px 2px 4px 0px #00000040;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &--dark {
+        background-color: $window-color-dark;
+      }
 
       @include onMobile {
         height: 288px;
@@ -225,6 +234,13 @@
         @extend %default-dark;
       }
     }
+
+    &__check-mark {
+      height: 48px;
+      width: 48px;
+
+      margin-bottom: 30px;
+    }
   }
 </style>
 
@@ -315,8 +331,10 @@
     <div
       v-else
       class="feedback-form__thanks"
+      :class="dark.isDarkThemeActive ? 'feedback-form__thanks--dark' : ''"
     >
-      Thanks
+      <img :src="checkMark" alt="check-mark" class="feedback-form__check-mark" />
+      <h4>Дякуємо за Ваш відгук!</h4>
     </div>
   </TransitionGroup>
 
@@ -325,6 +343,7 @@
 <script setup>
   import { ref, computed, watch } from 'vue';
   import starActive from '../assets/svgs/starActive.svg';
+  import checkMark from '../assets/svgs/checkMark.svg';
   import starInactive from '../assets/svgs/starInactive.svg';
   import carWhite from '../assets/svgs/carWhite.svg';
   import carBlack from '../assets/svgs/carBlack.svg';
