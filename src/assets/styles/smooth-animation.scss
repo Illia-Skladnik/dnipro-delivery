@@ -1,0 +1,49 @@
+// .smooth-item {
+//   transition: opacity 0.5s ease, transform 0.5s ease;
+//   opacity: 0;
+//   transform: translateY(30px);
+// }
+
+// .smooth-enter-active,
+// .smooth-leave-active {
+//   transition: opacity 0.5s ease, transform 0.5s ease;
+// }
+
+// .smooth-enter-from {
+//   opacity: 0;
+//   transform: translateY(-30px);
+// }
+
+// .smooth-leave-to {
+//   opacity: 0;
+//   transform: translateY(30px);
+// }
+
+
+
+// .smooth-enter-active,
+// .smooth-leave-active {
+//   transition: opacity 0.5s ease;
+// }
+
+// .smooth-enter-from,
+// .smooth-leave-to {
+//   opacity: 0;
+// }
+
+
+
+.smooth-enter-active,
+.smooth-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.smooth-enter-from,
+.smooth-leave-to {
+  opacity: 0;
+}
+
+.smooth-enter-to,
+.smooth-leave-from {
+  opacity: 1;
+}
