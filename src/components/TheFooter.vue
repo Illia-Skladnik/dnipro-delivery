@@ -8,6 +8,7 @@
     display: flex;
     justify-content: space-between;
     background-color: $window-color;
+    z-index: 2;
 
     transition-duration: #{$theme-switch-animation}ms;
 

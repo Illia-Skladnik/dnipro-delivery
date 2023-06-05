@@ -396,12 +396,13 @@
       errors.value.shortComment = true;
       return;
     }
+    
+    reviewsStore.createReview(review.value);
 
     review.value.name = '';
     review.value.review = '';
     review.value.grade = 0;
 
-    // reviewsStore.createReview(review.value);
     thanksBlock.value = true;
   }
   
