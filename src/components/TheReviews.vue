@@ -44,8 +44,8 @@
       <ReviewCard
         class="reviews__review"
         v-for="reviewData in reviewsStore.allReviews"
-
         :reviewData="reviewData"
+        :key="reviewData.id"
       />
   </div>
 </template>

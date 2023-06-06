@@ -106,7 +106,7 @@
 </template>
 
 <script setup>
-  import Evaluation from './Evaluation.vue'
+  import Evaluation from './Evaluation.vue';
   import user from '../assets/svgs/user.svg';
   import userDark from '../assets/svgs/userDark.svg';
   import calendar from '../assets/svgs/calendar.svg';

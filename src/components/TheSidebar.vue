@@ -92,6 +92,10 @@
         display: block;
       }
     }
+
+    &__social {
+      margin-bottom: 30px;
+    }
   }
 </style>
 
@@ -151,7 +155,8 @@
     >
       <span class="sidebar__button-text">Відгуки</span>
       <img class="sidebar__more-sign" v-if="activePage.currentPage === 'reviews' && !dark.isDarkThemeActive" :src="moreSign" alt="sign arrow"/>
-      <img class="sidebar__more-sign" v-if="activePage.currentPage === 'reviews' && dark.isDarkThemeActive" :src="moreSignDark" alt="sign arrow dark"/>    </button>
+      <img class="sidebar__more-sign" v-if="activePage.currentPage === 'reviews' && dark.isDarkThemeActive" :src="moreSignDark" alt="sign arrow dark"/>
+    </button>
 
     <div class="sidebar__description-block">
       <h3 class="sidebar__description-title">Компанія</h3>
@@ -168,10 +173,12 @@
       <span class="sidebar__description-text sidebar__phone">{{ variables.phones[0] }}</span>
       <span class="sidebar__description-text sidebar__phone">{{ variables.phones[1] }}</span>
     </div>
+    <SocialMediaBlock class="sidebar__social"/>
   </div>
 </template>
 
 <script setup>
+  import SocialMediaBlock from './SocialMediaBlock.vue';
   import { useGlobalVariablesStore } from "../stores/GlobalVariables";
   import { useCurrentPageStore } from "../stores/CurrentPageStore";
   import moreSign from '../assets/svgs/moresign.svg';
@@ -181,5 +188,4 @@
   const dark = useDarkThemeStore();
   const variables = useGlobalVariablesStore();
   const activePage = useCurrentPageStore();
-
 </script>
