@@ -11,15 +11,16 @@
 
 <template>
   <div class="main-layout">
-    <div v-for="product, index in products">
+    <div v-for="product, index in productsStore.allProducts">
       <ProductCard :product="product" :key="index"/>
     </div>
   </div>
 </template>
 
 <script setup>
-  import { useGlobalVariablesStore } from "../stores/GlobalVariables";
   import ProductCard from './ProductCard.vue'
+  import { useProductsStore } from "../stores/ProductsStore";
 
-  const { products } = useGlobalVariablesStore();
+  const productsStore = useProductsStore()
+  productsStore.getAllProducts();
 </script>

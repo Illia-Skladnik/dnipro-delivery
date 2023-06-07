@@ -71,8 +71,8 @@
       :class="dark.isDarkThemeActive ? 'product-card--dark' : ''"
     >
       <img :src="imageUrl" class="product-card__image" alt="poduct" />
-      <h4 class="product-card__text">{{ product.title }}</h4>
-      <span class="product-card__text">{{ product.price }}</span>
+      <h4 class="product-card__text">{{ product.data().title }}</h4>
+      <span class="product-card__text">{{ product.data().price }}</span>
       <div class="product-card__phone-block">
         <img v-if="!dark.isDarkThemeActive" class="product-card__phone-image" :src="phone" alt="phone imge"/>
         <img v-else class="product-card__phone-image product-card__phone-image--dark" :src="phoneDark" alt="phone image dark"/>
@@ -94,5 +94,5 @@
   const variables = useGlobalVariablesStore();
   const dark = useDarkThemeStore();
 
-  const imageUrl = new URL(`/src/assets/images/product-images/${props.product.image}`, import.meta.url);
+  const imageUrl = new URL(`/src/assets/images/product-images/${props.product.data().image}`, import.meta.url);
 </script>
