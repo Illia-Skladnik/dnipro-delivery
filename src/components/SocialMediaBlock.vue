@@ -38,12 +38,12 @@
       @click="redirectToWhatsApp"
     />
 
-    <img
+    <!-- <img
       class="social-media__sign"
       :src="instagram"
       alt="instagram"
       @click="redirectToInstagram"
-    />
+    /> -->
   </div>
 </template>
 

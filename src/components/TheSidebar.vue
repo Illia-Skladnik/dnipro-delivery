@@ -105,57 +105,58 @@
     :class="dark.isDarkThemeActive ? 'sidebar--dark' : ''"
   >
     <button
-      @click="activePage.setCurrentPage('main')"
+      @click="$emit('setCurrentPage', 'main')"
       class="sidebar__button"
       :class="[
-        activePage.currentPage === 'main' ? 'sidebar__button--active' : '',
+        currentPage === 'main' ? 'sidebar__button--active' : '',
         dark.isDarkThemeActive ? 'sidebar__button--dark' : '',
-        dark.isDarkThemeActive && activePage.currentPage === 'main' ? 'sidebar__button--active--dark' : '',
+        dark.isDarkThemeActive && currentPage === 'main' ? 'sidebar__button--active--dark' : '',
       ]"
     >
       <span class="sidebar__button-text">Що ми маємо</span>
-      <img class="sidebar__more-sign" v-if="activePage.currentPage === 'main' && !dark.isDarkThemeActive" :src="moreSign" alt="sign arrow"/>
-      <img class="sidebar__more-sign" v-if="activePage.currentPage === 'main' && dark.isDarkThemeActive" :src="moreSignDark" alt="sign arrow dark"/>
+      <img class="sidebar__more-sign" v-if="currentPage === 'main' && !dark.isDarkThemeActive" :src="moreSign" alt="sign arrow"/>
+      <img class="sidebar__more-sign" v-if="currentPage === 'main' && dark.isDarkThemeActive" :src="moreSignDark" alt="sign arrow dark"/>
     </button >
 
     <button
       :class="[
-        activePage.currentPage === 'about' ? 'sidebar__button--active' : '',
+        currentPage === 'about' ? 'sidebar__button--active' : '',
         dark.isDarkThemeActive ? 'sidebar__button--dark' : '',
-        dark.isDarkThemeActive && activePage.currentPage === 'about' ? 'sidebar__button--active--dark' : '',
+        dark.isDarkThemeActive && currentPage === 'about' ? 'sidebar__button--active--dark' : '',
       ]"
-      @click="activePage.setCurrentPage('about')"
+      @click="$emit('setCurrentPage', 'about')"
       class="sidebar__button"
     >
       <span class="sidebar__button-text">Про нас</span>
-      <img class="sidebar__more-sign" v-if="activePage.currentPage === 'about' && !dark.isDarkThemeActive" :src="moreSign" alt="sign arrow"/>
-      <img class="sidebar__more-sign" v-if="activePage.currentPage === 'about' && dark.isDarkThemeActive" :src="moreSignDark" alt="sign arrow dark"/>    </button>
+      <img class="sidebar__more-sign" v-if="currentPage === 'about' && !dark.isDarkThemeActive" :src="moreSign" alt="sign arrow"/>
+      <img class="sidebar__more-sign" v-if="currentPage === 'about' && dark.isDarkThemeActive" :src="moreSignDark" alt="sign arrow dark"/>    </button>
 
     <button
       :class="[
-        activePage.currentPage === 'requisites' ? 'sidebar__button--active' : '',
+        currentPage === 'requisites' ? 'sidebar__button--active' : '',
         dark.isDarkThemeActive ? 'sidebar__button--dark' : '',
-        dark.isDarkThemeActive && activePage.currentPage === 'requisites' ? 'sidebar__button--active--dark' : '',
+        dark.isDarkThemeActive && currentPage === 'requisites' ? 'sidebar__button--active--dark' : '',
       ]"
-      @click="activePage.setCurrentPage('requisites')"
+      @click="$emit('setCurrentPage', 'requisites')"
       class="sidebar__button"
     >
       <span class="sidebar__button-text">Реквізити</span>
-      <img class="sidebar__more-sign" v-if="activePage.currentPage === 'requisites' && !dark.isDarkThemeActive" :src="moreSign" alt="sign arrow"/>
-      <img class="sidebar__more-sign" v-if="activePage.currentPage === 'requisites' && dark.isDarkThemeActive" :src="moreSignDark" alt="sign arrow dark"/>    </button>
+      <img class="sidebar__more-sign" v-if="currentPage === 'requisites' && !dark.isDarkThemeActive" :src="moreSign" alt="sign arrow"/>
+      <img class="sidebar__more-sign" v-if="currentPage === 'requisites' && dark.isDarkThemeActive" :src="moreSignDark" alt="sign arrow dark"/>
+    </button>
 
     <button
       :class="[
-        activePage.currentPage === 'reviews' ? 'sidebar__button--active' : '',
+        currentPage === 'reviews' ? 'sidebar__button--active' : '',
         dark.isDarkThemeActive ? 'sidebar__button--dark' : '',
-        dark.isDarkThemeActive && activePage.currentPage === 'reviews' ? 'sidebar__button--active--dark' : '',
+        dark.isDarkThemeActive && currentPage === 'reviews' ? 'sidebar__button--active--dark' : '',
       ]"
-      @click="activePage.setCurrentPage('reviews')"
+      @click="$emit('setCurrentPage', 'reviews')"
       class="sidebar__button"
     >
       <span class="sidebar__button-text">Відгуки</span>
-      <img class="sidebar__more-sign" v-if="activePage.currentPage === 'reviews' && !dark.isDarkThemeActive" :src="moreSign" alt="sign arrow"/>
-      <img class="sidebar__more-sign" v-if="activePage.currentPage === 'reviews' && dark.isDarkThemeActive" :src="moreSignDark" alt="sign arrow dark"/>
+      <img class="sidebar__more-sign" v-if="currentPage === 'reviews' && !dark.isDarkThemeActive" :src="moreSign" alt="sign arrow"/>
+      <img class="sidebar__more-sign" v-if="currentPage === 'reviews' && dark.isDarkThemeActive" :src="moreSignDark" alt="sign arrow dark"/>
     </button>
 
     <div class="sidebar__description-block">
@@ -180,12 +181,13 @@
 <script setup>
   import SocialMediaBlock from './SocialMediaBlock.vue';
   import { useGlobalVariablesStore } from "../stores/GlobalVariables";
-  import { useCurrentPageStore } from "../stores/CurrentPageStore";
   import moreSign from '../assets/svgs/moresign.svg';
   import moreSignDark from '../assets/svgs/moreSignDark.svg';
   import { useDarkThemeStore } from "../stores/DarkThemeStore";
 
   const dark = useDarkThemeStore();
   const variables = useGlobalVariablesStore();
-  const activePage = useCurrentPageStore();
+
+  defineEmits(['setCurrentPage']);
+  defineProps(['currentPage']);
 </script>

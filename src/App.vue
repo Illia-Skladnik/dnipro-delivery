@@ -48,7 +48,6 @@
 
       @include onMobile {
         width: 250px;
-        
         margin: 0 auto 120px;
       }
     }
@@ -63,17 +62,18 @@
     <TheHeader class="main__header"/>
       <section class="main__page">
         <TheSidebar
-        class="main__sidebar"
-      />
-      <TheMainLayout class="main__content" v-if="activePage.currentPage === 'main'"/>
-      <TheAboutUs class=" main__about" v-if="activePage.currentPage === 'about'"/>
-      <TheRequisites class="main__content" v-if="activePage.currentPage === 'requisites'"/>
-      <TheReviews class="main__content" v-if="activePage.currentPage === 'reviews'"/>
-    </section>
+          class="main__sidebar"
+          @setCurrentPage="setCurrentPage"
+          :currentPage="currentPage"
+        />
+        <TheMainLayout class="main__content" v-if="currentPage === 'main'"/>
+        <TheAboutUs class=" main__about" v-if="currentPage === 'about'"/>
+        <TheRequisites class="main__content" v-if="currentPage === 'requisites'"/>
+        <TheReviews class="main__content" v-if="currentPage === 'reviews'"/>
+      </section>
   </main>
   <TheFooter/>
 </template>
-
 
 <script setup>
   import TheHeader from './components/TheHeader.vue';
@@ -83,9 +83,11 @@
   import TheAboutUs from './components/TheAboutUs.vue';
   import TheReviews from './components/TheReviews.vue';
   import TheRequisites from './components/TheRequisites.vue';
-  import { useCurrentPageStore } from "./stores/CurrentPageStore";
   import { useDarkThemeStore } from "./stores/DarkThemeStore";
+  import { ref } from 'vue';
 
+  const currentPage = ref('main');
   const dark = useDarkThemeStore();
-  const activePage = useCurrentPageStore();
+
+  const setCurrentPage = (page) => currentPage.value = page;
 </script>
