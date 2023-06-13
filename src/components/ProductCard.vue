@@ -87,12 +87,16 @@
 <script setup>
   import { useDarkThemeStore } from "../stores/DarkThemeStore";
   import { useGlobalVariablesStore } from "../stores/GlobalVariables";
+  import { useProductsStore } from "../stores/ProductsStore";
   import phone from '../assets/svgs/phone.svg';
   import phoneDark from '../assets/svgs/phoneDark.svg';
+  import { onMounted, ref } from "vue";
 
   const props = defineProps(['product']);
   const variables = useGlobalVariablesStore();
   const dark = useDarkThemeStore();
 
-  const imageUrl = new URL(`/src/assets/images/product-images/${props.product.data().image}`, import.meta.url);
+  const imageUrl = ref('');
+
+  onMounted(async () => imageUrl.value = await useProductsStore().getImgUrlByName(props.product.data().image));
 </script>

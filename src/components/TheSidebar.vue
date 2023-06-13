@@ -129,7 +129,7 @@
     >
       <span class="sidebar__button-text">Про нас</span>
       <img class="sidebar__more-sign" v-if="currentPage === 'about' && !dark.isDarkThemeActive" :src="moreSign" alt="sign arrow"/>
-      <img class="sidebar__more-sign" v-if="currentPage === 'about' && dark.isDarkThemeActive" :src="moreSignDark" alt="sign arrow dark"/>    </button>
+      <img class="sidebar__more-sign" v-if="currentPage === 'about' && dark.isDarkThemeActive" :src="moreSignDark" alt="sign arrow dark"/></button>
 
     <button
       :class="[
