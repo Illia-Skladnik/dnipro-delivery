@@ -42,6 +42,7 @@ export const useProductsStore = defineStore('ProductsStore', () => {
     try {
       url = await getDownloadURL(storageReference);
     } catch (error) {
+      console.log(error);
       return;
     }
 

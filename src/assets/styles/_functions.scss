@@ -25,5 +25,5 @@
 }
 
 @function getCenter($a, $b) {
-  @return ($a - $b) / 2;
+  @return calc(($a - $b) / 2);
 }
