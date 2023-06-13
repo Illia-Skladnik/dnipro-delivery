@@ -54,5 +54,6 @@ export const useProductsStore = defineStore('ProductsStore', () => {
     allProducts,
     getAllProducts,
     getImgUrlByName,
+    isImageLoading,
   }
 });

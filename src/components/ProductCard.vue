@@ -1,7 +1,8 @@
 <style scoped lang="scss">
   @import '@/assets/styles/variables.scss';
+  @import '@/assets/styles/_functions.scss';
   .product-card {
-    width: 250px;
+    width: #{$card-width}px;
     background-color: $window-color;
     transition-duration: #{$theme-switch-animation}ms;
     box-shadow: 0px 2px 4px 0px #00000040;
@@ -62,26 +63,39 @@
         width: 22px;
       }
     }
+
+    &__loader {
+      $height: 352;
+      width: #{$card-width}px;
+      padding-left: #{getCenter(250, $loader-size)}px;
+      padding-top: #{getCenter($height, $loader-size)}px;
+      height: #{$height}px;
+    }
   }
 </style>
 
 <template>
-    <div
-      class="product-card"
-      :class="dark.isDarkThemeActive ? 'product-card--dark' : ''"
-    >
-      <img :src="imageUrl" class="product-card__image" alt="poduct" />
-      <h4 class="product-card__text">{{ product.data().title }}</h4>
-      <span class="product-card__text">{{ product.data().price }}</span>
-      <div class="product-card__phone-block">
-        <img v-if="!dark.isDarkThemeActive" class="product-card__phone-image" :src="phone" alt="phone imge"/>
-        <img v-else class="product-card__phone-image product-card__phone-image--dark" :src="phoneDark" alt="phone image dark"/>
-        <div class="product-card__phone-wrapper">
-          <span class="product-card__phone-number">{{ variables.phones[0] }}</span>
-          <span class="product-card__phone-number">{{ variables.phones[1] }}</span>
-        </div>
+  <Loader 
+    class="product-card__loader"
+    v-if="productsStore.isImageLoading"
+  />
+  <div
+    v-else
+    class="product-card"
+    :class="dark.isDarkThemeActive ? 'product-card--dark' : ''"
+  >
+    <img :src="imageUrl" class="product-card__image" alt="poduct" />
+    <h4 class="product-card__text">{{ product.data().title }}</h4>
+    <span class="product-card__text">{{ product.data().price }}</span>
+    <div class="product-card__phone-block">
+      <img v-if="!dark.isDarkThemeActive" class="product-card__phone-image" :src="phone" alt="phone imge"/>
+      <img v-else class="product-card__phone-image product-card__phone-image--dark" :src="phoneDark" alt="phone image dark"/>
+      <div class="product-card__phone-wrapper">
+        <span class="product-card__phone-number">{{ variables.phones[0] }}</span>
+        <span class="product-card__phone-number">{{ variables.phones[1] }}</span>
       </div>
     </div>
+  </div>
 </template>
 
 <script setup>
@@ -90,6 +104,7 @@
   import { useProductsStore } from "../stores/ProductsStore";
   import phone from '../assets/svgs/phone.svg';
   import phoneDark from '../assets/svgs/phoneDark.svg';
+  import Loader from './Loader.vue';
   import { onMounted, ref } from "vue";
 
   const props = defineProps(['product']);
@@ -98,5 +113,7 @@
 
   const imageUrl = ref('');
 
-  onMounted(async () => imageUrl.value = await useProductsStore().getImgUrlByName(props.product.data().image));
+  const productsStore = useProductsStore();
+
+  onMounted(async () => imageUrl.value = await productsStore.getImgUrlByName(props.product.data().image));
 </script>

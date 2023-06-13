@@ -23,3 +23,7 @@
     @return "Надішліть нам свій відгук";
   }
 }
+
+@function getCenter($a, $b) {
+  @return ($a - $b) / 2;
+}
