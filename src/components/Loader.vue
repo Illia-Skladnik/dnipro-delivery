@@ -1,10 +1,11 @@
 <style  scoped lang="scss">
   @import '@/assets/styles/_keyframes.scss';
+  @import '@/assets/styles/variables.scss';
   .lds-roller {
     display: inline-block;
     position: relative;
-    width: 80px;
-    height: 80px;
+    width: #{$loader-size}px;
+    height: #{$loader-size}px;
   }
   .lds-roller div {
     animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
@@ -17,8 +18,12 @@
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: #fff;
+    background: $primary-color;
     margin: -4px 0 0 -4px;
+  }
+
+  .lds-roller--dark div:after {
+    background: $primary-color-dark;
   }
   .lds-roller div:nth-child(1) {
     animation-delay: -0.036s;
@@ -79,7 +84,10 @@
 </style>
 
 <template>
-  <div class="lds-roller">
+  <div 
+    class="lds-roller"
+    :class="!dark.isDarkThemeActive ? 'lds-roller--dark' : ''"
+  >
     <div></div>
     <div></div>
     <div></div>
@@ -92,4 +100,6 @@
 </template>
 
 <script setup>
+  import { useDarkThemeStore } from "../stores/DarkThemeStore";
+  const dark = useDarkThemeStore();
 </script>

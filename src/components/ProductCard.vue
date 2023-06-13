@@ -110,9 +110,7 @@
   const props = defineProps(['product']);
   const variables = useGlobalVariablesStore();
   const dark = useDarkThemeStore();
-
   const imageUrl = ref('');
-
   const productsStore = useProductsStore();
 
   onMounted(async () => imageUrl.value = await productsStore.getImgUrlByName(props.product.data().image));
