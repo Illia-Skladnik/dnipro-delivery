@@ -84,10 +84,15 @@
   import TheReviews from './components/TheReviews.vue';
   import TheRequisites from './components/TheRequisites.vue';
   import { useDarkThemeStore } from "./stores/DarkThemeStore";
-  import { ref } from 'vue';
+  import { ref, onMounted } from 'vue';
+  import { event } from 'vue-gtag'
+
 
   const currentPage = ref('main');
   const dark = useDarkThemeStore();
 
   const setCurrentPage = (page) => currentPage.value = page;
+  const login = () => event('login', { method: 'Google' });
+
+  onMounted(() => login());
 </script>

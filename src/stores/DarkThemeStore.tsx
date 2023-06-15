@@ -8,7 +8,7 @@ export const useDarkThemeStore = defineStore('DarkThemeStore', () => {
   watch(
     () =>isDarkThemeActive,
     (state) => {
-        localStorage.setItem("isDarkThemeActive", JSON.stringify(state.value))
+      localStorage.setItem("isDarkThemeActive", JSON.stringify(state.value))
     },
     { deep: true }
   );
